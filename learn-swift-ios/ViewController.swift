@@ -14,6 +14,14 @@ class ViewController: UIViewController {
     
     @IBAction func buttonAction_TouchUpInside(_ sender: Any) {
         labelOutlet.text = "changed"
+        
+        print("""
+        Changed Log
+
+        Changed Log
+
+        Changed Log
+        """)
     }
     
     override func viewDidLoad() {
@@ -21,6 +29,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         labelOutlet.text = "label view didload"
+        
+        print(" Log ")
         
     }
 
