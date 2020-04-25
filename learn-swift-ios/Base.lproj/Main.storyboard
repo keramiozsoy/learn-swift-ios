@@ -30,11 +30,30 @@
                                     <action selector="buttonAction_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="miS-uo-Hc7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjw-U5-ZSc">
+                                <rect key="frame" x="153" y="466" width="141" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="button2Action_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jpc-Xd-uxG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K17-ja-oTj">
+                                <rect key="frame" x="200" y="589" width="83" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="button3Action_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F8Z-N2-fbx"/>
+                                    <action selector="buttonAction_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cCB-7K-fDq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="button2Outlet" destination="gjw-U5-ZSc" id="cVb-ug-P15"/>
+                        <outlet property="button3Outlet" destination="K17-ja-oTj" id="Ass-d8-llK"/>
                         <outlet property="labelOutlet" destination="hNv-Ee-h18" id="n52-J5-W1W"/>
                     </connections>
                 </viewController>
