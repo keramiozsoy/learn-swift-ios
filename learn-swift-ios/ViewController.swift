@@ -10,9 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var labelOutlet: UILabel!
+    
+    @IBAction func buttonAction_TouchUpInside(_ sender: Any) {
+        labelOutlet.text = "changed"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        labelOutlet.text = "label view didload"
+        
     }
 
 
