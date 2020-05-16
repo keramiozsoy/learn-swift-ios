@@ -10,69 +10,84 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet weak var textFieldOutlet: UITextField!
+
+    
     @IBOutlet weak var labelOutlet: UILabel!
-    @IBOutlet weak var button2Outlet: UIButton!
-    @IBOutlet weak var button3Outlet: UIButton!
     
-    @IBAction func buttonAction_TouchUpInside(_ sender: Any) {
-        labelOutlet.text = "changed"
-        
-        print("""
-        Changed Log
+        @IBOutlet weak var buttonOutlet: UIButton!
 
-        Changed Log
-
-        Changed Log
-        """)
-    }
-    
-    
-    @IBAction func button2Action_TouchUpInside(_ sender: Any) {
-        
-        
-        // Butonu gizler
-        // button2Outlet.isHidden = true
-        
-        // Butonu %50 oraninda gorunurlugunu degistirri
-        // button2Outlet.alpha = 0.5
-        
-        button2Outlet.backgroundColor = UIColor.blue;
-        
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        labelOutlet.text = "label view didload"
-        
-        
-        button2Outlet.setTitle("renk degistir", for: UIControl.State.normal)
-        // button2Outlet.setTitle("renk degistir", for: .normal)
-        
-        button3Outlet.setTitle("yer degistir", for: UIControl.State.normal)
-        
-        print(" Log ")
-        
-        
-        
-    }
+        buttonOutlet .backgroundColor = UIColor .red
 
+        labelOutlet.textColor = UIColor .green
+
+        // sayfa acildiginda otomatik olarak secili
+        textFieldOutlet.becomeFirstResponder()
+
+        // password girişi gorunumu saglar
+        //textFieldOutlet.isSecureTextEntry = true
+
+        // farklı klavye görünümleri
+        //textFieldOutlet.keyboardType = UIKeyboardType .numberPad
+        
+        //textFieldOutlet.keyboardType = UIKeyboardType.emailAddress
+
+    }
     
+    @IBAction func textFieldAction_EditingDidBegin(_ sender: Any) {
+
+        print(" Log - yazmaya basladi ")
+     }
+
+    @IBAction func textFieldAction_EditingDidEnd(_ sender: Any) {
+
+        print(" Log - yazidan cikildi bitti ")
+     }
     
+    @IBAction func textFieldAction_EditingChanged(_ sender: Any) {
+
+        print(" Log - yazi degisiyor ")
+
+        // yazi degistikce label de gösteriliyor
+
+        let degisenYazi:String = textFieldOutlet.text!
+
+        labelOutlet.text = degisenYazi
+
+     }
     
-    @IBAction func button3Action_TouchUpInside(_ sender: Any) {
+    @IBAction func buttonAction_TouchUpInside(_ sender: Any) {
+        // focus yapılmış bir textfield
+        // dışına tıklanarak unfocus
+        // yapmak için tüm sayfayı bir buton
+        // ile kaplıyoruz ki
+        // kullanıcı boş bir yere basarak
+        // klavyeyi de kapatabilsin
+
+
         
-        // butonun yerini degistir
+        // buttonType = custom seçilir
         
-        button3Outlet.center = CGPoint(x: 150,y: 650)
-        
-        
-        // butonun boyunu degistir
-        
-        button3Outlet.bounds = CGRect.init(x: 150, y: 650, width: 80, height: 80)
-        
+        // buton tüm sayfayı kaplayacak şekilde
+        // genişletilir
+
+        // view controller scene den içinde
+        // bulunduğu view in en alt katmanında
+        // olması için en yukarı taşınır.
+
+        // uygulama baslarken rengi kirmizi
+
+
+        print(" Log - Geri tusuna basildi ")
+
+        textFieldOutlet.resignFirstResponder()
+
     }
 }
 
